@@ -52,4 +52,4 @@ collections:
     description: "My thoughts and ideas"
     feature_text: |
       Welcome to my blog
-    feature_image: "/assets/charlie-marsh-yxMnnE2eS0w-unsplash.jpg"
+    feature_image: "./assets/charlie-marsh-yxMnnE2eS0w-unsplash.jpg"
