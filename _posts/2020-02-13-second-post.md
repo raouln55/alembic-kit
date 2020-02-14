@@ -2,7 +2,7 @@
 layout: post
 title: Second Post
 categories:
-- General
+- Technologie
 feature_image: "./assets/charlie-marsh-yxMnnE2eS0w-unsplash.jpg"
 ---
 
