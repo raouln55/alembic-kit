@@ -1,8 +1,21 @@
-const version = '20200214093044';
+---
+permalink: "/sw.js"
+layout: none
+---
+const version = '{{ site.time | date: '%Y%m%d%H%M%S' }}';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/technologie/2020/02/13/thrid-post/","/technologie/2020/02/13/second-post/","/general/2018/08/22/hello-world/","/about/","/categories/","/blog/","/","/manifest.json","/assets/search.json","/assets/styles.css","/redirects.json","/sitemap.xml","/robots.txt","/feed.xml","https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return [
+    {%- for post in site.posts limit: 10 -%}
+      "{{ post.url }}",
+    {%- endfor -%}
+    {%- for page in site.pages -%}
+      {%- unless page.url contains 'sw.js' or page.url contains '404.html' -%}
+        "{{ page.url }}",
+      {%- endunless -%}
+    {%- endfor -%}
+      "{{ site.logo }}", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 
